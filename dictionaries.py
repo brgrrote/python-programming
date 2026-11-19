@@ -100,5 +100,20 @@ for i in range(len(employee_id)):
 
     employee_database.append(employee)
 
+# Display the final employee database
+count_index = 0
+output_string = ""
+
+for employee in employee_database:
+    output_string = output_string + "\nRecord Index: " + str(count_index)
+    output_string = output_string + " | Employee ID: " + str(employee["Employee ID"])
+    output_string = output_string + " | Name: " + str(employee["Employee Name"])
+    output_string = output_string + " | Hourly Wage :" + str(employee["Hourly Wage"])
+    output_string = output_string + " | Total Hourly Wage :" + str(employee["Total Hourly Wage"])
+    output_string = output_string + " | Company Raise :" + str(employee["Company Raise"])
+
+    # Increment the current index
+    count_index = count_index + 1
+
 print("\nFinal Employee Database:")
-print(employee_database)
+print(output_string)    
