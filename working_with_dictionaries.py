@@ -3,6 +3,8 @@ pizza_prefs = [{'name': 'sandeep', 'toppings': 'mushrooms', 'pizza type': 'round
                {'name': 'lisa', 'toppings': ['mushrooms', 'peparroni'], 'pizza type': 'square'},
                {'name': 'dan', 'toppings': ['bacon', 'sausage', 'pepparoni'], 'pizza type': 'square'}]
 
+print(pizza_prefs)
+
 for person in pizza_prefs:
 
     mushrooms_found = False
@@ -15,5 +17,6 @@ for person in pizza_prefs:
             mushrooms_found = True
 
     if mushrooms_found: 
-        print(person['name'] + " likes mushrooms")
-                         
+        pizza_prefs.remove(person)
+
+print(pizza_prefs)                         
