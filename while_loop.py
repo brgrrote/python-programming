@@ -23,6 +23,52 @@ while program_running:
         if not area_code_ok:
             area_code = input("Area Code was not properly formatted. Please try again: ")
 
+    # end area code processing
+    # beging processing first part of phone number
+    phone_first_part = input("Please enter the first three digits of your phone number: ")
+    
+    phone_first_part_ok = False
+    
+    while not phone_first_part_ok:
+            if area_code:
+                try:
+                    int(phone_first_part)
+                    if len(phone_first_part) == 3:
+                        print("The first part of your phone number is: " + phone_first_part)
+                        phone_first_part_ok = True
+                    else:
+                        phone_first_part_ok = False
+                except:
+                    phone_first_part_ok = False
+            else:
+                phone_first_part_ok = False
+    
+            if not phone_first_part_ok:
+                phone_first_part = input("The first part of your phone number was not properly formatted. Please try again: ")
+
+    # end area processing first part of phone number
+    # beging processing second part of phone number
+    phone_second_part = input("Please enter the last four digits of your phone number: ")
+    
+    phone_second_part_ok = False
+    
+    while not phone_second_part_ok:
+            if phone_second_part:
+                try:
+                    int(phone_second_part)
+                    if len(phone_second_part) == 4:
+                        print("The second part of your phone number is: " + phone_second_part)
+                        phone_second_part_ok = True
+                    else:
+                        phone_second_part_ok = False
+                except:
+                    phone_second_part_ok = False
+            else:
+                phone_second_part_ok = False
+    
+            if not phone_second_part_ok:
+                phone_second_part = input("The second part of your phone number was not properly formatted. Please try again: ")
+
     add_another_number = input("Do you wish to add another phone number (Y or N)? ")
     if add_another_number == "N":
         break
