@@ -76,10 +76,3 @@ while item_remove in grocery_list:
     grocery_list.remove(item_remove)
 
 print("\nUpdated Grocery List: ", grocery_list)
-
-
-
-
-
-
-      
