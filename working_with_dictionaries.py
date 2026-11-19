@@ -1,6 +1,3 @@
-pizza_prefs = {}
-
-pizza_prefs['name'] = "sandeep"
-pizza_prefs['toppings'] = "mushrooms"
+pizza_prefs = {'name': 'sandeep', 'toppings': 'mushrooms'}
 
 print(pizza_prefs)
