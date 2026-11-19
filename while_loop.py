@@ -1,4 +1,7 @@
 program_running = True
+phone_numbers = []
+
+print(phone_numbers)
 
 while program_running:
 
@@ -69,8 +72,12 @@ while program_running:
             if not phone_second_part_ok:
                 phone_second_part = input("The second part of your phone number was not properly formatted. Please try again: ")
 
+    phone_numbers.append({'area_code': area_code, 'first_part': phone_first_part, 'second part': phone_second_part})
+
     add_another_number = input("Do you wish to add another phone number (Y or N)? ")
     if add_another_number == "N":
         break
     else:
         continue 
+
+print(phone_numbers)
