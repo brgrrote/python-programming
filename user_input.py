@@ -1,29 +1,74 @@
-# 
-#
+# 1. Employee ID
 employee_id = input ("Employee ID: ")
-
 
 if not employee_id.isdigit() or len(employee_id) > 7:
     print("Invalid Employee ID. Must be a number with 7 or fewer digits")
-    exit 
+    exit() 
 
-employee_name = input ("Name: ").strip()
-forbidden_chars = '!"@#$%^&*()_=+,<>/?;:[]{}\).'
+# 2. Employee Name
+employee_name = input ("Name: ")
+forbidden_chars = '!"@#$%^&*()_=+,<>/?;:[]{}\\'
 
+if employee_name == "":
+    print("Invalid Employee Name.")
+    exit()
+
+letter_count = 0
 for char in employee_name:
     if char in forbidden_chars:
         print("Invalid Employee Name.")
-        exit
+        exit()
     if char.isalpha():
         letter_count = letter_count +  1
 
 # Check if more than half of the characters are letters
 if letter_count <= len(employee_name) / 2:
     print("Invalid Employee Name.")
-    exit
+    exit()
 
 # 3. Employee Email Address
 employee_email = input("Email Address: ")
-forbidden_email_chars = '!"\'#$%^&*()=+,<>/?;:[]{}\).'
+forbidden_email_chars = '!"\'#$%^&*()=+,<>/?;:[]{}\\'
 
 
+if employee_email == "":
+    print("Invalid Email.")
+    exit()
+
+alnum_count = 0
+for char in employee_email:
+    if char in forbidden_email_chars:
+        print("Invalid Email Address.")
+        exit()
+    if char.isalnum():
+        alnum_count = alnum_count + 1
+
+# Check if more than half of the characters are letters or numbers
+if alnum_count <= len(employee_email) / 2:
+    print("Invalid Email Address.")
+    exit()
+
+# Employee Address 
+employee_address = input("Address(Optional): ")
+forbidden_address_chars = '!"\'@$%^&*_=+<>?;:[]{})'
+
+if employee_address !="":
+    addr_count = 0
+    for char in employee_address:
+        if char in forbidden_address_chars:
+            print("Invalid Address.")
+            exit()
+        if char.isalnum():
+            addr_count = addr_count + 1
+
+    if addr_count <= len(employee_address) / 2:
+        print("Invalid Address.")
+        exit()
+
+    last_sentence = "Your address is " + employee_address + "."
+else:
+    last_sentence = "You did not provide an address."
+
+# Final Output 
+print("Hello, " + employee_name + ". " + "Your Employee ID is " + employee_id + ", " + "and your email address is " + employee_email + ". "
+      + last_sentence)
